@@ -12,6 +12,16 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'google-oauth2-bearer': {
+          apiKey: 'YOUR_GOOGLE_PROJECT_CLIENT_ID',
+          redirectUri: 'http://localhost:4200',
+          scope: 'profile'
+        }
+      }
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
