@@ -16,7 +16,7 @@ module.exports = function(environment) {
       sessionServiceName: 'session',
       providers: {
         'google-oauth2-bearer': {
-          apiKey: 'YOUR_GOOGLE_PROJECT_CLIENT_ID',
+          apiKey: '169187697817-50mfe2incf4q01ag7t0u089m71f6jkut.apps.googleusercontent.com',
           redirectUri: 'http://localhost:4200',
           scope: 'profile'
         }

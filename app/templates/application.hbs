@@ -1,3 +1,13 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
+{{#if session.isAuthenticated}}
+    <a href="#" {{action 'signOut'}}>Sign out</a>
+{{else}}
+  {{#if session.isWorking}}
+    <p>Working...</p>
+  {{else}}
+    <a href="#" {{action 'signInWithGoogle'}}>Sign in</a>
+  {{/if}}
+{{/if}}
+
 {{outlet}}
