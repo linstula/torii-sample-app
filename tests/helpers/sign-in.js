@@ -1,18 +1,17 @@
 import Ember from 'ember';
 
+var registerAsyncHelper = Ember.Test.registerAsyncHelper;
 var signInLinkSelector = "a:contains('Sign in')";
 
-export default function(App) {
-  return function() {
+registerAsyncHelper('signIn', function(app) {
     var successReturnValue = {
       'access_token': 'dummy-token'
     };
 
-    var toriiPopup = App.__container__.lookup('torii-service:popup');
+    var toriiPopup = app.__container__.lookup('torii-service:popup');
     toriiPopup.open = function() {
       return Ember.RSVP.resolve(successReturnValue);
     };
 
     return click(signInLinkSelector);
-  };
-}
+});
